@@ -9,38 +9,6 @@ struct process{
     int wt;
 };
 
-void sortShortestJob(int n, struct process *processes){
-    for (int i=1;i<n;i++){
-        for(int j=0;j<n-1;j++){
-            if (processes[i].burst<processes[j].burst ){
-                struct process temp = processes[i];
-                processes[i]=processes[j];
-                processes[j]=temp;
-            }
-        }
-    }
-    for(int i=0;i<n;i++){
-        if (processes[i].arrival<processes[0].arrival){
-            struct process temp=processes[0];
-            processes[0]=processes[i];
-            processes[i]=temp;
-        }
-    }
-
-    for(int j=1;j<n-1;j++){
-        int t1=processes[j-1].burst+processes[j-1].arrival;
-        for(int i=j;i<n;i++){
-            if (processes[i].arrival<processes[j].arrival && t1>processes[i].arrival 
-                && processes[i].burst<processes[j].burst){
-                struct process temp=processes[j];
-                processes[j]=processes[i];
-                processes[i]=temp;
-            }
-        }
-    }
-
-}
-
 void sortByArrival(int n, struct process *processes){
     for(int i = 0; i < n - 1; i++){
         for(int j = 0; j < n - i - 1; j++){
@@ -51,6 +19,47 @@ void sortByArrival(int n, struct process *processes){
             }
         }
     }
+}
+
+void sortShortestJob(int n, struct process *processes){
+    
+    sortByArrival(n, processes);
+    int index;
+    int at = processes[0].arrival;
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n - i - 1; j++){
+            if(processes[j].burst > processes[j + 1].burst && at == processes[j + 1].arrival){
+                struct process temp = processes[j];
+                processes[j] = processes[j+1];
+                processes[j+1] = temp;
+            }
+        }
+    }
+    
+    processes[0].ct = processes[0].burst + processes[0].arrival;
+    processes[0].wt = 0;
+    processes[0].tat = processes[0].burst;
+    
+    
+    for(int i = 1; i < n; i++){
+        int ct = processes[i - 1].ct;
+        int low = processes[i].burst;
+        
+        for(int j = i; j < n; j++){
+            if(ct >= processes[j].arrival && processes[j].burst <= low){
+                low = processes[j].burst;
+                index = j;
+            }
+        }
+        processes[index].ct = ct + processes[index].burst;
+        processes[index].tat = processes[index].ct - processes[index].arrival;
+        processes[index].wt = processes[index].tat - processes[index].burst;
+        
+        struct process temp = processes[i];
+        processes[i] = processes[index];
+        processes[index] = temp;
+        
+    }    
 }
 
 void sortByNum(int n, struct process *processes){
@@ -83,17 +92,6 @@ int main()
     }
     
     sortShortestJob(numProcess, processes);
-    
-    for(int i = 0; i < numProcess; i++){
-        if(i == 0 || processes[i-1].ct <= processes[i].arrival){
-            processes[i].wt = 0;
-        }
-        else{
-            processes[i].wt = processes[i-1].ct - processes[i].arrival;
-        }  
-        processes[i].tat = processes[i].burst + processes[i].wt;
-        processes[i].ct = processes[i].tat + processes[i].arrival;
-    }
     
     sortByNum(numProcess, processes);
     
