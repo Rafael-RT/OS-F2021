@@ -1,0 +1,7 @@
+8 KB pages
+16-bit virtual addresses
+
+8 KB = 8192 bits = 2 ^ (13) bits
+13 bits of an address will be given for the offset.
+Number of page frame that available 16-13 = 3 bits.
+2 ^ 3 = 8, so we can only have 8 pages (entries).

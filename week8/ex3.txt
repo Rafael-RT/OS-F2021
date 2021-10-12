@@ -1,0 +1,33 @@
+top - 20:38:18 up 1 day,  5:07,  1 user,  load average: 0,15, 0,08, 0,02
+Tasks: 304 total,   1 running, 303 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0,1 us,  0,2 sy,  0,0 ni, 99,6 id,  0,0 wa,  0,0 hi,  0,1 si,  0,0 st
+МиБ Mem :   3901,4 total,   1608,8 free,   1105,8 used,   1186,9 buff/cache
+МиБ Swap:   1401,6 total,   1401,6 free,      0,0 used.   2543,2 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                               
+    739 message+  20   0    9008   6140   3848 S   0,3   0,2   0:10.85 dbus-daemon                                                           
+    983 kernoops  20   0   11264    444      0 S   0,3   0,0   0:01.73 kerneloops                                                            
+  14729 rafael    20   0   20700   4184   3396 R   0,3   0,1   0:00.05 top                                                                   
+      1 root      20   0  169028  12952   8360 S   0,0   0,3   0:23.97 systemd                                                               
+      2 root      20   0       0      0      0 S   0,0   0,0   0:00.14 kthreadd                                                              
+      3 root       0 -20       0      0      0 I   0,0   0,0   0:00.00 rcu_gp                                                                
+      4 root       0 -20       0      0      0 I   0,0   0,0   0:00.00 rcu_par_gp                                                            
+      6 root       0 -20       0      0      0 I   0,0   0,0   0:00.00 kworker/0:0H-events_highpri                                           
+      9 root       0 -20       0      0      0 I   0,0   0,0   0:00.00 mm_percpu_wq                                                          
+     10 root      20   0       0      0      0 S   0,0   0,0   0:00.00 rcu_tasks_rude_                                                       
+     11 root      20   0       0      0      0 S   0,0   0,0   0:00.00 rcu_tasks_trace                                                       
+     12 root      20   0       0      0      0 S   0,0   0,0   0:00.17 ksoftirqd/0                                                           
+     13 root      20   0       0      0      0 I   0,0   0,0   0:09.14 rcu_sched                                                             
+     14 root      rt   0       0      0      0 S   0,0   0,0   0:00.38 migration/0                                                           
+     15 root     -51   0       0      0      0 S   0,0   0,0   0:00.00 idle_inject/0                                                         
+     16 root      20   0       0      0      0 S   0,0   0,0   0:00.00 cpuhp/0                                                               
+     17 root      20   0       0      0      0 S   0,0   0,0   0:00.00 cpuhp/1                                                               
+     18 root     -51   0       0      0      0 S   0,0   0,0   0:00.00 idle_inject/1                                                         
+     19 root      rt   0       0      0      0 S   0,0   0,0   0:02.05 migration/1                                                           
+     20 root      20   0       0      0      0 S   0,0   0,0   0:00.11 ksoftirqd/1                                                           
+     22 root       0 -20       0      0      0 I   0,0   0,0   0:00.00 kworker/1:0H-kblockd                                                  
+     23 root      20   0       0      0      0 S   0,0   0,0   0:00.00 cpuhp/2                                                               
+     24 root     -51   0       0      0      0 S   0,0   0,0   0:00.00 idle_inject/2                                                         
+     25 root      rt   0       0      0      0 S   0,0   0,0   0:02.04 migration/2                                                           
+     26 root      20   0       0      0      0 S   0,0   0,0   0:00.10 ksoftirqd/2                                                           
+     28 root       0 -20       0      0      0 I   0,0   0,0   0:00.00 kworker/2:0H-events_highpri   

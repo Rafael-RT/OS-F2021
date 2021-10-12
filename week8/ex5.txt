@@ -1,0 +1,1 @@
+Physical memory refers to RAM and is severely limited. While virtual memory is used when the memory in RAM runs out. Virtual memory is created by combining RAM with hard disk space allows large programs to run faster when there is not enough RAM. 
