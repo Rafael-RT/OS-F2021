@@ -1,0 +1,3 @@
+In order to decrease the Hit/Miss ratio we need to increase the number of pages that we access for some constant time=t.
+
+In order to increase the ratio we need to decrease this number of pages. If the number of pages accessed for the last time=t is small then all this pages can fit into memory resulting in Hit/Miss ratio = inf (Misses = 0) We can also increase the number of page frames. Then more pages will be stored in RAM so the number of hits will increase => the ratio will increase.
