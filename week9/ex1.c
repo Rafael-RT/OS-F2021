@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
@@ -22,11 +21,8 @@ void updateAge(frame_t frames[], int numFrames)
 {
     for(int i=0; i<numFrames; i++)
     {
-        // The counters are shifted right 1 bit.
         frames[i].age = frames[i].age >> 1;
-        // The R-bit is added to the leftmost bit.
         frames[i].age |= frames[i].R << 30;
-        // Nullify all R-bits.
         frames[i].R = 0;
     }
 }
@@ -48,12 +44,10 @@ int indexLeastCounter(frame_t frames[], int numFrames)
 
 int main()
 {
-    int numFrames, numHits=0, numMisses=0, cTick=0, interval=1;
+    int numFrames, numHits=0, numMisses=0;
 
     printf("Specify number of frames: ");
     scanf("%d", &numFrames);
-    printf("Specify clock interval: ");
-    scanf("%d", &interval);
 
     frame_t frames[numFrames];
     for(int i=0; i<numFrames; i++)
@@ -82,9 +76,7 @@ int main()
             frames[toReplace].age = 1 << 30;
             frames[toReplace].R = 1;
         }
-        if(cTick % interval == 0)
-            updateAge(frames, numFrames);
-        cTick++;
+        updateAge(frames, numFrames);
     }
     
     float ratio = (float)numHits/numMisses;
