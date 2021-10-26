@@ -1,0 +1,9 @@
+-rw-rw-r-- 1 rafael rafael 5 окт 27 00:58 _ex3.txt
+-rwx---rwx 1 rafael rafael 5 окт 27 00:58 _ex3.txt
+-rwxrwxrwx 1 rafael rafael 5 окт 27 00:58 _ex3.txt
+
+1. 660 can be treated as -rw-rw----, meaning that only owner and group have the permission to read file and write to it.
+
+2. 775 can be treated as -rwxrwxr-x, meaning that only owner and group have all permissions (read, write, execute), but the others can only read and execute it.
+
+3. 777 can be treated as -rwxrwxrwx, meaning that for owner, group and others granted all permissions (read, write, execute).

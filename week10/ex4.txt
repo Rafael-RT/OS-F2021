@@ -1,0 +1,1 @@
+Files link1, file1 have same i-node 1450662.

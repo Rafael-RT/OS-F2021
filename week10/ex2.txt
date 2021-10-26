@@ -1,0 +1,2 @@
+./_ex2.txt
+./week01/file.txt
