@@ -1,0 +1,12 @@
+P + E -> "I passed the Exam!"
+C + A + P -> "Get some cappuccino!"
+H + I -> "Hello world!"
+pe
+eI passed the Exam!
+pacGet some cappuccino!
+piHello world!
+hiHello world!
+hcaGet some cappuccino!
+phHello world!
+i^C
+
